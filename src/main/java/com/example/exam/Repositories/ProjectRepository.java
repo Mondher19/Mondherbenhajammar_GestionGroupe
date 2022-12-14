@@ -7,10 +7,10 @@ import java.util.List;
 
 public interface ProjectRepository extends JpaRepository<Project, Integer> {
 
-//    void assignProjectToUser(Integer projectId , Integer userId);
 
 
-    void assignProjectToClient(Integer projectId, String firstName , String lastName);
+
+  
 
 
 

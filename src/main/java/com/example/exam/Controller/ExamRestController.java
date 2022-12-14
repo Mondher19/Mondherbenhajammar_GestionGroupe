@@ -26,7 +26,7 @@ public class ExamRestController {
     UserRepository userRepository;
 
 
-    //http://localhost:9090/rest/add-User
+  
     @PostMapping("/add-User")
     public User addUser(@RequestBody User entity) {
         return	userRepository.save(entity);
@@ -34,7 +34,6 @@ public class ExamRestController {
 
 
 
-    //http://localhost:9090/rest/add-Project
     @PostMapping("/add-Project")
     public Project addProject(@RequestBody Project entity) {
         return	projectRepository.save(entity);
@@ -53,22 +52,6 @@ public class ExamRestController {
 
     }
 
-
-    @PutMapping("/{projectId}/{firstName}/{lastName}")
-    public void assignProjectToClient(@PathVariable Integer projectId
-            , @PathVariable String firstName, @PathVariable String lastName){
-        Project project= projectRepository.findById(projectId).orElse(null);
-        List<User> users = userRepository.findAll();
-
-        for(User user: users){
-            if(user.getFName().equals(firstName) && user.getFName().equals(lastName)){
-
-            }
-        }
-
-       // project.setUsers(User,lastName);
-
-    }
 
 
     @GetMapping()
